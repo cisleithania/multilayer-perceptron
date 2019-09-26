@@ -1,0 +1,11 @@
+﻿  f2.cpp
+  MyForm.cpp
+c:\users\danis\documents\visual studio 2015\projects\project1\project1\MyForm.h(5): fatal error C1083: Cannot open include file: 'fann.h': No such file or directory
+  preparing_files_for_testing.cpp
+preparing_files_for_testing.cpp(3): fatal error C1083: Cannot open include file: 'fann.h': No such file or directory
+  stdafx.cpp
+  testing.cpp
+testing.cpp(3): fatal error C1083: Cannot open include file: 'fann.h': No such file or directory
+  training.cpp
+training.cpp(3): fatal error C1083: Cannot open include file: 'fann.h': No such file or directory
+  Generating Code...
