@@ -127,7 +127,7 @@ namespace Project1 {
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(137, 64);
 			this->button1->TabIndex = 2;
-			this->button1->Text = L"Ïîäãîòîâêà ôàéëîâ ê òåñòèðîâàíèþ";
+			this->button1->Text = L"ÐŸÐ¾Ð´Ð³Ð¾Ñ‚Ð¾Ð²ÐºÐ° Ñ„Ð°Ð¹Ð»Ð¾Ð² Ðº Ñ‚ÐµÑÑ‚Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð¸ÑŽ";
 			this->button1->UseVisualStyleBackColor = true;
 			this->button1->Click += gcnew System::EventHandler(this, &MyForm::button1_Click);
 			// 
@@ -137,7 +137,7 @@ namespace Project1 {
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(137, 64);
 			this->button2->TabIndex = 3;
-			this->button2->Text = L"Òåñòèðîâàíèå";
+			this->button2->Text = L"Ð¢ÐµÑÑ‚Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð¸Ðµ";
 			this->button2->UseVisualStyleBackColor = true;
 			this->button2->Click += gcnew System::EventHandler(this, &MyForm::button2_Click);
 			// 
@@ -147,7 +147,7 @@ namespace Project1 {
 			this->button3->Name = L"button3";
 			this->button3->Size = System::Drawing::Size(137, 64);
 			this->button3->TabIndex = 4;
-			this->button3->Text = L"Ïîäãîòîâêà ôàéëîâ ê îáó÷åíèþ";
+			this->button3->Text = L"ÐŸÐ¾Ð´Ð³Ð¾Ñ‚Ð¾Ð²ÐºÐ° Ñ„Ð°Ð¹Ð»Ð¾Ð² Ðº Ð¾Ð±ÑƒÑ‡ÐµÐ½Ð¸ÑŽ";
 			this->button3->UseVisualStyleBackColor = true;
 			this->button3->Click += gcnew System::EventHandler(this, &MyForm::button3_Click);
 			// 
@@ -157,7 +157,7 @@ namespace Project1 {
 			this->button4->Name = L"button4";
 			this->button4->Size = System::Drawing::Size(137, 64);
 			this->button4->TabIndex = 5;
-			this->button4->Text = L"Îáó÷åíèå íåéðîñåòè";
+			this->button4->Text = L"ÐžÐ±ÑƒÑ‡ÐµÐ½Ð¸Ðµ Ð½ÐµÐ¹Ñ€Ð¾ÑÐµÑ‚Ð¸";
 			this->button4->UseVisualStyleBackColor = true;
 			this->button4->Click += gcnew System::EventHandler(this, &MyForm::button4_Click);
 			// 
@@ -312,6 +312,7 @@ namespace Project1 {
 			this->Controls->Add(this->textBox1);
 			this->Name = L"MyForm";
 			this->Text = L"MyForm";
+			this->Load += gcnew System::EventHandler(this, &MyForm::MyForm_Load);
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -319,7 +320,7 @@ namespace Project1 {
 #pragma endregion
 private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
 	preparing_files_for_testing();
-	textBox6->Text = "êîíåö ïðîãðàììû";
+	textBox6->Text = "ÐºÐ¾Ð½ÐµÑ† Ð¿Ñ€Ð¾Ð³Ñ€Ð°Ð¼Ð¼Ñ‹";
 }
 private: System::Void button2_Click(System::Object^  sender, System::EventArgs^  e) {
 
@@ -329,11 +330,6 @@ private: System::Void button2_Click(System::Object^  sender, System::EventArgs^ 
 	int one_1 = 0;
 	int equally_1 = 0;
 	int percent_1 = 0;
-
-	/*
-	useGPU obj;
-	obj.adding(o_1, one_1, two_1, equally_1, percent_1);
-	*/
 
 	testing(o_1, one_1, two_1, equally_1, percent_1);
 
@@ -348,17 +344,17 @@ private: System::Void button2_Click(System::Object^  sender, System::EventArgs^ 
 }
 private: System::Void button3_Click(System::Object^  sender, System::EventArgs^  e) {
 	preparing_files_for_training();
-	textBox8->Text = "êîíåö ïðîãðàììû";
+	textBox8->Text = "ÐºÐ¾Ð½ÐµÑ† Ð¿Ñ€Ð¾Ð³Ñ€Ð°Ð¼Ð¼Ñ‹";
 }
 private: System::Void button4_Click(System::Object^  sender, System::EventArgs^  e) {
 
-	const unsigned int num_input = 23;  //âõîä
-	const unsigned int num_output = 1; //âûõîä
-	const unsigned int num_layers = 3; //ñëîè
-	const unsigned int num_neurons_hidden = 8; //ñêðûòûå íåéðîíû
-	const float desired_error = (const float) 0.01; //æåëàåìàÿ îøèáêà
-	const unsigned int max_epochs = 100000; //ìàêñèìàëüíûå êîë-âî ïðîõîäîâ 
-	const unsigned int epochs_between_reports = 1; // êîë-âî ïðîõîäîâ ìåæäó ñîîáùåíèÿìè
+	const unsigned int num_input = 23;  //Ð²Ñ…Ð¾Ð´
+	const unsigned int num_output = 1; //Ð²Ñ‹Ñ…Ð¾Ð´
+	const unsigned int num_layers = 3; //ÑÐ»Ð¾Ð¸
+	const unsigned int num_neurons_hidden = 8; //ÑÐºÑ€Ñ‹Ñ‚Ñ‹Ðµ Ð½ÐµÐ¹Ñ€Ð¾Ð½Ñ‹
+	const float desired_error = (const float) 0.01; //Ð¶ÐµÐ»Ð°ÐµÐ¼Ð°Ñ Ð¾ÑˆÐ¸Ð±ÐºÐ°
+	const unsigned int max_epochs = 100000; //Ð¼Ð°ÐºÑÐ¸Ð¼Ð°Ð»ÑŒÐ½Ñ‹Ðµ ÐºÐ¾Ð»-Ð²Ð¾ Ð¿Ñ€Ð¾Ñ…Ð¾Ð´Ð¾Ð² 
+	const unsigned int epochs_between_reports = 1; // ÐºÐ¾Ð»-Ð²Ð¾ Ð¿Ñ€Ð¾Ñ…Ð¾Ð´Ð¾Ð² Ð¼ÐµÐ¶Ð´Ñƒ ÑÐ¾Ð¾Ð±Ñ‰ÐµÐ½Ð¸ÑÐ¼Ð¸
 
 	struct fann *ann = fann_create_standard(num_layers, num_input, num_neurons_hidden, num_output);
 
@@ -367,16 +363,14 @@ private: System::Void button4_Click(System::Object^  sender, System::EventArgs^ 
 	fann_set_activation_function_output(ann, FANN_LINEAR);
 
 	char ddd[50] = "D:/C++/training/";
-	//char ddd[50] = "training/";
 
 	training(ddd);
 
 	fann_train_on_file(ann, ddd, max_epochs, epochs_between_reports, desired_error);
 
 	fann_save(ann, "unite_14.net"); 
-	//(ÍÅÂÎÇÌÎÆÍÎ) íóæíî ñîõðàíèòü íåéðîñåòü â ïàïêó NN, êîòîðûé â ñâîþ î÷åðåäü, íàõîäèòñÿ â ïàïêå ñ exe-ôàéëîì;
 
-	textBox7->Text = "êîíåö ïðîãðàììû";
+	textBox7->Text = "ÐºÐ¾Ð½ÐµÑ† Ð¿Ñ€Ð¾Ð³Ñ€Ð°Ð¼Ð¼Ñ‹";
 }
 private: System::Void textBox1_TextChanged(System::Object^  sender, System::EventArgs^  e) {
 }
@@ -409,6 +403,8 @@ private: System::Void label6_Click(System::Object^  sender, System::EventArgs^  
 private: System::Void textBox9_TextChanged(System::Object^  sender, System::EventArgs^  e) {
 }
 private: System::Void label7_Click(System::Object^  sender, System::EventArgs^  e) {
+}
+private: System::Void MyForm_Load(System::Object^  sender, System::EventArgs^  e) {
 }
 };
 }

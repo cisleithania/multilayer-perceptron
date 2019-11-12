@@ -15,14 +15,12 @@ using namespace std;
 void preparing_files_for_training()
 {
 	f0();
-	//ofstream out("D:/C++/training/nn.data");
 
 	WIN32_FIND_DATAW wfd;
 	int iter = 0;
 	int j = 0;
 	wstring ggg[1000];  //строка где хранятся названия файлов (широкий символ w_)
 
-	//HANDLE const hFind = FindFirstFileW(L"D:\\C++\\train\\files_for_training\\*", &wfd); //директория, где ищутся файлы
 	HANDLE const hFind = FindFirstFileW(L"D:/C++/train/files_for_training/*", &wfd); //директория, где ищутся файлы
 
 	if (INVALID_HANDLE_VALUE != hFind)
@@ -41,23 +39,18 @@ void preparing_files_for_training()
 	int o = iter - 2; //количество файлов в папке (-2 - потому что, по умолчанию выводится число на два больше)
 	cout << "Количество файлов в папке: " << o << endl;
 
-	//cout << "Для продолжения работы программы нажмите любую клавишу..." << endl;
-	//cin.get();
-
 	for (int t = 0; t < iter; t++) {   //(int t = 0; t < 100; t++)
 		std::wcout << ggg[t] << std::endl; //вывод на экран названий файлов
 	}
 
 	for (int q = 0; q < o; q++)
 	{
-
 		cout << "вы находитесь в цикле q = " << q << endl;
-		//cin.get();
 
 		// 0 - .; 1 - ..; 2 - первый файл; 3 - второй файл и т.д.
 		wstring abc = ggg[q + 2];   wcout << abc << endl; //строка куда записывается файл для обучения 
 
-														  //**************** wstring --> string ****************************
+		//**************** wstring --> string ****************************
 		string s(abc.begin(), abc.end());
 		s.assign(abc.begin(), abc.end());
 		cout << s << endl;
@@ -82,7 +75,6 @@ void preparing_files_for_training()
 		cout << "change1 = : " << change2 << endl;
 
 		//**************** объединение двух строк - char ов *************
-		//char ddm[70] = "D:/C++/train/files_for_training/";
 		char ddm[70] = "D:/C++/train/files_for_training/";
 		strcat(ddm, c);
 		cout << "ddm = " << ddm << endl;
@@ -99,7 +91,6 @@ void preparing_files_for_training()
 		f3(ddm, o);
 	}
 
-	//char ddf[] = "D:/C++/training/nn.data";
 	char ddf[] = "training/nn.data";
 	f4(ddf, o);
 }

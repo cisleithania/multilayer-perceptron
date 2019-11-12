@@ -8,7 +8,6 @@ void f3(const char *a, int o)
 {
 	string str;
 	ifstream in(a);
-	//ofstream out("D:/C++/training/nn.data", ios_base::app);
 	ofstream out("training/nn.data", ios_base::app);
 
 	int n = o;
@@ -24,5 +23,4 @@ void f3(const char *a, int o)
 	in.close();
 	out.close();
 	//remove(a);
-	//rename("D:/C++/train/files_for_training/f1.dat", a);
 }

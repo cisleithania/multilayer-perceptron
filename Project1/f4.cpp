@@ -6,30 +6,23 @@ using namespace std;
 
 void f4(const char *a, int o)
 {
-	/*ofstream out(a);
-	int n = o;
-	out << n * 248 << " 23 1\n" << endl;
-	out.close();*/
-
 	int n = o;
 	string str;
 	ifstream in(a);
-	//ofstream out("D:/C++/training/f4.data");
 	ofstream out("training/f4.data");
 
 	out << n * 248 << " 23 1\n";
 
 	while (getline(in, str))
 	{
-		//str.erase(0, 11); // 10 èëè 11, â çàâèñèìîñòè îò ôàéëà
+		//str.erase(0, 11); // 10 Ğ¸Ğ»Ğ¸ 11, Ğ² Ğ·Ğ°Ğ²Ğ¸ÑĞ¸Ğ¼Ğ¾ÑÑ‚Ğ¸ Ğ¾Ñ‚ Ñ„Ğ°Ğ¹Ğ»Ğ°
 		out << str << "\n";
-		//out << "1\n";  //1 èëè -1  (ıòó ñòğî÷êó óáğàòü äëÿ ïîäãîòîâêè ôàéëà äëÿ òğåíèğîâêè)
+		//out << "1\n";  //1 Ğ¸Ğ»Ğ¸ -1  (ÑÑ‚Ñƒ ÑÑ‚Ñ€Ğ¾Ñ‡ĞºÑƒ ÑƒĞ±Ñ€Ğ°Ñ‚ÑŒ Ğ´Ğ»Ñ Ğ¿Ğ¾Ğ´Ğ³Ğ¾Ñ‚Ğ¾Ğ²ĞºĞ¸ Ñ„Ğ°Ğ¹Ğ»Ğ° Ğ´Ğ»Ñ Ñ‚Ñ€ĞµĞ½Ğ¸Ñ€Ğ¾Ğ²ĞºĞ¸)
 	}
 
 	in.close();
 	out.close();
 	remove(a);
-	//rename("D:/C++/training/f4.data", a);
 	rename("training/f4.data", a);
 
 }

@@ -17,7 +17,6 @@ void preparing_files_for_testing()
 	wstring ggg[1000];  //строка где хранятся названия файлов (широкий символ w_)
 
 	HANDLE const hFind = FindFirstFileW(L"D:/C++/train/files_for_testing/*", &wfd); //директория, где ищутся файлы
-	//HANDLE const hFind = FindFirstFileW(L"files_for_testing\\*", &wfd); //директория, где ищутся файлы
 
 	if (INVALID_HANDLE_VALUE != hFind)
 	{
@@ -51,7 +50,7 @@ void preparing_files_for_testing()
 		// 0 - .; 1 - ..; 2 - первый файл; 3 - второй файл и т.д.
 		wstring abc = ggg[q + 2];   wcout << abc << endl; //строка куда записывается файл для обучения 
 
-														  //**************** wstring --> string ****************************
+		//**************** wstring --> string ****************************
 		string s(abc.begin(), abc.end());
 		s.assign(abc.begin(), abc.end());
 		cout << s << endl;
@@ -59,8 +58,7 @@ void preparing_files_for_testing()
 
 		const char * c = s.c_str(); //string --> char
 
-									//**************** объединение двух строк - char ов *************
-		//char ddm[70] = "D:/C++/train/files_for_testing/";
+		//**************** объединение двух строк - char ов *************
 		char ddm[70] = "D:/C++/train/files_for_testing/";
 		strcat(ddm, c);
 		cout << "ddm = " << ddm << endl;
