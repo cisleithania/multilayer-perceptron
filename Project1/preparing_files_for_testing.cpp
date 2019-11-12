@@ -14,10 +14,10 @@ void preparing_files_for_testing()
 	WIN32_FIND_DATAW wfd;
 	int iter = 0;
 	int j = 0;
-	wstring ggg[1000];  //строка где хранятся названия файлов (широкий символ w_)
+	wstring ggg[1000];  //СЃС‚СЂРѕРєР° РіРґРµ С…СЂР°РЅСЏС‚СЃСЏ РЅР°Р·РІР°РЅРёСЏ С„Р°Р№Р»РѕРІ (С€РёСЂРѕРєРёР№ СЃРёРјРІРѕР» w_)
 
-	HANDLE const hFind = FindFirstFileW(L"D:/C++/train/files_for_testing/*", &wfd); //директория, где ищутся файлы
-	//HANDLE const hFind = FindFirstFileW(L"files_for_testing\\*", &wfd); //директория, где ищутся файлы
+	HANDLE const hFind = FindFirstFileW(L"D:/C++/train/files_for_testing/*", &wfd); //РґРёСЂРµРєС‚РѕСЂРёСЏ, РіРґРµ РёС‰СѓС‚СЃСЏ С„Р°Р№Р»С‹
+	//HANDLE const hFind = FindFirstFileW(L"files_for_testing\\*", &wfd); //РґРёСЂРµРєС‚РѕСЂРёСЏ, РіРґРµ РёС‰СѓС‚СЃСЏ С„Р°Р№Р»С‹
 
 	if (INVALID_HANDLE_VALUE != hFind)
 	{
@@ -32,24 +32,24 @@ void preparing_files_for_testing()
 		FindClose(hFind);
 	}
 
-	int o = iter - 2; //количество файлов в папке (-2 - потому что, по умолчанию выводится число на два больше)
-	cout << "Количество файлов в папке: " << o << endl;
+	int o = iter - 2; //РєРѕР»РёС‡РµСЃС‚РІРѕ С„Р°Р№Р»РѕРІ РІ РїР°РїРєРµ (-2 - РїРѕС‚РѕРјСѓ С‡С‚Рѕ, РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ РІС‹РІРѕРґРёС‚СЃСЏ С‡РёСЃР»Рѕ РЅР° РґРІР° Р±РѕР»СЊС€Рµ)
+	cout << "РљРѕР»РёС‡РµСЃС‚РІРѕ С„Р°Р№Р»РѕРІ РІ РїР°РїРєРµ: " << o << endl;
 
-	cout << "Для продолжения работы программы нажмите любую клавишу..." << endl;
+	cout << "Р”Р»СЏ РїСЂРѕРґРѕР»Р¶РµРЅРёСЏ СЂР°Р±РѕС‚С‹ РїСЂРѕРіСЂР°РјРјС‹ РЅР°Р¶РјРёС‚Рµ Р»СЋР±СѓСЋ РєР»Р°РІРёС€Сѓ..." << endl;
 	cin.get();
 
 	for (int t = 0; t < iter; t++) {   //(int t = 0; t < 100; t++)
-		std::wcout << ggg[t] << std::endl; //вывод на экран названий файлов
+		std::wcout << ggg[t] << std::endl; //РІС‹РІРѕРґ РЅР° СЌРєСЂР°РЅ РЅР°Р·РІР°РЅРёР№ С„Р°Р№Р»РѕРІ
 	}
 
 	for (int q = 0; q < o; q++)
 	{
 
-		cout << "вы находитесь в цикле q = " << q << endl;
+		cout << "РІС‹ РЅР°С…РѕРґРёС‚РµСЃСЊ РІ С†РёРєР»Рµ q = " << q << endl;
 		cin.get();
 
-		// 0 - .; 1 - ..; 2 - первый файл; 3 - второй файл и т.д.
-		wstring abc = ggg[q + 2];   wcout << abc << endl; //строка куда записывается файл для обучения 
+		// 0 - .; 1 - ..; 2 - РїРµСЂРІС‹Р№ С„Р°Р№Р»; 3 - РІС‚РѕСЂРѕР№ С„Р°Р№Р» Рё С‚.Рґ.
+		wstring abc = ggg[q + 2];   wcout << abc << endl; //СЃС‚СЂРѕРєР° РєСѓРґР° Р·Р°РїРёСЃС‹РІР°РµС‚СЃСЏ С„Р°Р№Р» РґР»СЏ РѕР±СѓС‡РµРЅРёСЏ 
 
 														  //**************** wstring --> string ****************************
 		string s(abc.begin(), abc.end());
@@ -59,7 +59,7 @@ void preparing_files_for_testing()
 
 		const char * c = s.c_str(); //string --> char
 
-									//**************** объединение двух строк - char ов *************
+									//**************** РѕР±СЉРµРґРёРЅРµРЅРёРµ РґРІСѓС… СЃС‚СЂРѕРє - char РѕРІ *************
 		//char ddm[70] = "D:/C++/train/files_for_testing/";
 		char ddm[70] = "D:/C++/train/files_for_testing/";
 		strcat(ddm, c);
